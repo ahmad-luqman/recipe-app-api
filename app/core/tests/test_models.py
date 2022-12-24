@@ -1,20 +1,20 @@
-'''
+"""
 Tests for models.
-'''
+"""
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
 
 class ModelTests(TestCase):
-    '''Tests for models.'''
+    """Tests for models."""
 
     def test_create_user_with_email_successful(self):
-        '''Test creating a new user with an email is successful.'''
+        """Test creating a user with an email is successful."""
         email = 'test@example.com'
-        password = 'Testpass123'
+        password = 'testpass123'
         user = get_user_model().objects.create_user(
             email=email,
-            password=password
+            password=password,
         )
 
         self.assertEqual(user.email, email)
