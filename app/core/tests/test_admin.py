@@ -8,7 +8,7 @@ from django.test import Client
 
 
 class AdminSiteTests(TestCase):
-    """Test for Django admin."""
+    """Tests for Django admin."""
 
     def setUp(self):
         """Create user and client."""
@@ -21,10 +21,10 @@ class AdminSiteTests(TestCase):
         self.user = get_user_model().objects.create_user(
             email='user@example.com',
             password='testpass123',
-            name='Test User',
+            name='Test User'
         )
 
-    def test_user_list(self):
+    def test_users_lists(self):
         """Test that users are listed on page."""
         url = reverse('admin:core_user_changelist')
         res = self.client.get(url)
